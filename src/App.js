@@ -4,11 +4,14 @@ import Error from './pages/Error';
 import Home from './pages/Home';
 import Rooms from './pages/Rooms';
 import SingleRoom from './pages/SingleRoom';
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import Navbar from './components/Navbar';
 function App() {
   return (
     <>
+      <Navbar />
       <Switch>
+        {/* exact will match the absolute path */}
         <Route exact path="/" >
           <Home />
         </Route>
@@ -16,11 +19,7 @@ function App() {
         <Route exact path="/rooms/:slug" component={SingleRoom} />
         <Route component={Error} />
       </Switch>
-      {/* hello from app
-      < Home />
-      <Rooms />
-      <SingleRoom />
-      <Error /> */}
+
     </>
   );
 }
