@@ -4,14 +4,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { RoomProvider } from './components/context';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <RoomProvider>
     <Router>
       <App />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </RoomProvider>
+  , document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
